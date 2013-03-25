@@ -1,0 +1,9 @@
+public class CompilationUnitTest extends TestCase {
+
+	public CompilationUnitTest() {
+	    disableTestMethod(CompilationUnitTest.class, "testA");
+	}
+
+	public void testA() {
+	}
+}

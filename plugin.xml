@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<!-- PLUGIN VIEW -->
+	<extension point="org.eclipse.ui.views">
+		<category id="Ranger" name="Ranger">
+		</category>
+		<view
+		      category="Ranger"
+		      class="com.im.ranger.plugin.gui.SearchView"
+		      icon="icons/arrow-split.png"
+		      id="com.im.ranger.plugin.gui.SearchView"
+		      name="Ranger">
+		</view>
+	</extension>
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+			<view
+			     id="com.im.ranger.plugin.gui.SearchView"
+			     ratio="0.5"
+			     relationship="right"
+			     relative="org.eclipse.ui.views.TaskList">
+			</view>
+		</perspectiveExtension>
+	</extension>
+	<extension point="org.eclipse.help.contexts">
+		<contexts file="contexts.xml">
+		</contexts>
+	</extension>
+	
+	<!-- PREFERENCE PAGE -->
+	<extension point="org.eclipse.ui.preferencePages">
+		<page class="com.im.ranger.plugin.gui.SearchViewPreferencePage" id="com.im.ranger.plugin.gui.SearchViewPreferencePage" name="Ranger">
+		</page>
+	</extension>
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="com.im.ranger.plugin.gui.PreferenceInitializer">
+		</initializer>
+	</extension>
+	<extension point="org.eclipse.ui.propertiesView">
+	</extension>
+	
+	<!-- COMMANDS -->
+	<extension point="org.eclipse.ui.bindings">
+		<key 
+			actionId="com.im.ranger.plugin.actions.StartSearchAction"
+			commandId="com.im.ranger.plugin.commands.search.startSearch" 
+			contextId="org.eclipse.ui.contexts.window" 
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="Ctrl+Alt+T">
+		</key>
+	</extension>
+	<extension point="org.eclipse.ui.commands">
+		<category id="com.im.ranger.plugin.commands.search" name="Search">
+		</category>
+		<command categoryId="com.im.ranger.plugin.commands.search" id="com.im.ranger.plugin.commands.search.startSearch" name="Start Search">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler class="com.im.ranger.plugin.gui.StartSearchCommandHandler" commandId="com.im.ranger.plugin.commands.search.startSearch">
+		</handler>
+	</extension>
+	
+	<!-- POPUP MENU -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true" id="trackTest.popupMenus" objectClass="org.eclipse.core.resources.IFile" nameFilter="*.java">
+			<action
+			   class="com.im.ranger.plugin.gui.StartSearchPopupMenuItem"
+			   icon="icons/arrow-split.png"
+			   enablesFor="1"
+			   id="com.im.ranger.plugin.gui.StartSearchPopupMenuItem"
+			   label="Search Tests"
+			   definitionId="com.im.ranger.plugin.commands.search.startSearch"
+			   tooltip="Search for tests directly or indirectly affected by the selected method">
+			</action> 
+		</objectContribution>    
+	</extension>
+</plugin>

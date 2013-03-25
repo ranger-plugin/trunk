@@ -1,0 +1,5 @@
+public class CompilationUnitTest extends TestCase {
+
+	public void testA() {
+	}
+}
