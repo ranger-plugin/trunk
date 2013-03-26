@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ranger
-Bundle-SymbolicName: com.im.ranger;singleton:=true
-Bundle-Version: 1.0.0.rc2
+Bundle-SymbolicName: net.ranger;singleton:=true
+Bundle-Version: 1.0.0
 Bundle-Activator: net.ranger.plugin.RangerPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
