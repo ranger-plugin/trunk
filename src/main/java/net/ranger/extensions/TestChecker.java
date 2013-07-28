@@ -1,4 +1,4 @@
-package net.ranger.constraint;
+package net.ranger.extensions;
 
 import net.ranger.core.Source;
 
