@@ -46,7 +46,7 @@ public class RangerPluginUtils {
 				}
 			} catch (CoreException e) {
 				// Ignore this exception, don't even know why it's
-				// thrown from isNatureEnabled (WTF?!). This way we 
+				// thrown from isNatureEnabled (WTF?!). This way we
 				// can continue to iterate through the projects.
 				// If exceptions are thrown for all projects, we simply
 				// return an empty array then.
@@ -62,7 +62,7 @@ public class RangerPluginUtils {
 	}
 
 	public static CompilationUnit getCompilationUnit(ICompilationUnit compilationUnit) {
-		CompilationUnit astCompilationUnit = SharedASTProvider.getAST((ICompilationUnit) compilationUnit, SharedASTProvider.WAIT_NO, null);
+		CompilationUnit astCompilationUnit = SharedASTProvider.getAST(compilationUnit, SharedASTProvider.WAIT_NO, null);
 		return astCompilationUnit;
 	}
 
@@ -83,5 +83,4 @@ public class RangerPluginUtils {
 
 		return node;
 	}
-
 }

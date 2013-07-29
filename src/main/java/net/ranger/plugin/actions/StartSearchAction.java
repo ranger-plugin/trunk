@@ -25,7 +25,6 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 
-
 /**
  * A JFace action to start a new search. It's encapsulated here so it can be
  * used in different GUI elements.
@@ -65,7 +64,8 @@ public class StartSearchAction extends RangerAction {
 
 							if (javaElementAtCursor instanceof IMethod) {
 								int maxSearchDepth = RangerPlugin.getDefault().getPreferenceStore().getInt(PreferenceConstants.MAX_SEARCH_DEPTH_PROPERTY_NAME);
-								Search search = new WorkspaceSearch(SourceWrappers.create((IMethod) javaElementAtCursor), new TestMethodTrackingConstraint(maxSearchDepth), RangerPluginUtils.getWorkspaceJavaProjects());
+								Search search = new WorkspaceSearch(SourceWrappers.create(javaElementAtCursor), new TestMethodTrackingConstraint(maxSearchDepth, RangerPlugin
+										.getDefault().getTestCheckerExtensions()), RangerPluginUtils.getWorkspaceJavaProjects());
 								this.componentFactory.getSearchProcessor().process(search, new InnerSearchListener());
 							} else {
 								throw new ActionException("Java element at current position isn't a method");
