@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="net.ranger.constraint" name="TestChecker" schema="schema/net.ranger.constraint.exsd"/>
+   <extension-point id="net.ranger.extensions.testChecker" name="TestChecker" schema="schema/net.ranger.extensions.testChecker.exsd"/>
 	<!-- PLUGIN VIEW -->
 	<extension point="org.eclipse.ui.views">
 		<category id="Ranger" name="Ranger">

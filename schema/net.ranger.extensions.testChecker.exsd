@@ -3,7 +3,7 @@
 <schema targetNamespace="net.ranger" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="net.ranger" id="net.ranger.constraint" name="TestChecker"/>
+         <meta.schema plugin="net.ranger" id="net.ranger.extensions.testChecker" name="TestChecker"/>
       </appinfo>
       <documentation>
          
